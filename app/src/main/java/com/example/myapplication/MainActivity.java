@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private Button losujB, zapiszB, resetujB;
     private ImageButton kosc1, kosc2, kosc3, kosc4, kosc5;
     private ArrayList kosci = new ArrayList<>();
-    private int ilosc1 = 0, ilosc2 = 0, ilosc3 = 0, ilosc4 = 0, ilosc5 = 0, ilosc6 = 0;
+    private ArrayList ilosci = new ArrayList<>();
+    private ArrayList zdjecia = new ArrayList<>();
     private Random rd = new Random();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,19 @@ public class MainActivity extends AppCompatActivity {
         kosci.add(kosc4);
         kosci.add(kosc5);
 
+        kosci.add(0);
+        kosci.add(0);
+        kosci.add(0);
+        kosci.add(0);
+        kosci.add(0);
+
+        zdjecia.add(R.drawable.a);
+        zdjecia.add(R.drawable.b);
+        zdjecia.add(R.drawable.c);
+        zdjecia.add(R.drawable.d);
+        zdjecia.add(R.drawable.e);
+        zdjecia.add(R.drawable.f);
+
         losujB.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -60,33 +74,11 @@ public class MainActivity extends AppCompatActivity {
     }
     private void losowanie(ImageButton kosc){
         int wylosowana = rd.nextInt(6) + 1;
-
-        switch(wylosowana){
-            case 1:
-                kosc.setImageResource(R.drawable.a);
-                ilosc1++;
-                break;
-            case 2:
-                kosc.setImageResource(R.drawable.b);
-                ilosc2++;
-                break;
-            case 3:
-                kosc.setImageResource(R.drawable.c);
-                ilosc3++;
-                break;
-            case 4:
-                kosc.setImageResource(R.drawable.d);
-                ilosc4++;
-                break;
-            case 5:
-                kosc.setImageResource(R.drawable.e);
-                ilosc5++;
-                break;
-            case 6:
-                kosc.setImageResource(R.drawable.f);
-                ilosc6++;
-                break;
+        for (int i = 0; i < 6; i++) {
+            kosc.setImageResource((Integer) zdjecia.get(i));
+            ilosci.set(i, Integer.parseInt((String) ilosci.get(i)) + 1);
         }
+
     }
     private void sprawdzaj(){
 
