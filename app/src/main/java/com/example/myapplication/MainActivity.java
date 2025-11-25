@@ -47,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
         kosci.add(kosc4);
         kosci.add(kosc5);
 
-        kosci.add(0);
-        kosci.add(0);
-        kosci.add(0);
-        kosci.add(0);
-        kosci.add(0);
+        ilosci.add(0);
+        ilosci.add(0);
+        ilosci.add(0);
+        ilosci.add(0);
+        ilosci.add(0);
 
         zdjecia.add(R.drawable.a);
         zdjecia.add(R.drawable.b);
@@ -73,10 +73,10 @@ public class MainActivity extends AppCompatActivity {
         );
     }
     private void losowanie(ImageButton kosc){
-        int wylosowana = rd.nextInt(6) + 1;
+        int wylosowana = rd.nextInt(6);
         for (int i = 0; i < 6; i++) {
-            kosc.setImageResource((Integer) zdjecia.get(i));
-            ilosci.set(i, Integer.parseInt((String) ilosci.get(i)) + 1);
+            kosc.setImageResource((Integer) zdjecia.get(wylosowana));
+//            ilosci.set(i, Integer.parseInt((String) ilosci.get(i)) + 1);
         }
 
     }
