@@ -72,6 +72,16 @@
             android:layout_weight="1"
             android:layout_margin="5px"
             app:srcCompat="@drawable/a" />
+
+        <ImageButton
+            android:id="@+id/kosc6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:adjustViewBounds="true"
+            android:layout_weight="1"
+            android:layout_margin="5px"
+            app:srcCompat="@drawable/a" />
     </LinearLayout>
 
     <Button
